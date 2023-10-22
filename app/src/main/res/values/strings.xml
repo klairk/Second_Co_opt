@@ -7,4 +7,5 @@
     <string name="enter_age">Enter age</string>
     <string name="enter_name">Enter name</string>
     <string name="enter_salary">Enter salary</string>
+    <string name="loading_data">Loading Data.....</string>
 </resources>

@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Second_Co_opt"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:label="@string/app_name"
             android:exported="true">
             <intent-filter>
@@ -22,11 +22,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".InsertionActivity"
-            android:label="@string/app_name" />
+            android:name=".activities.InsertionActivity"
+            android:label="@string/app_name"
+            android:exported="true" />
         <activity
-            android:name=".FetchingActivity"
-            android:label="@string/app_name" />
+            android:name=".activities.FetchingActivity"
+            android:label="@string/app_name"
+            android:exported="true" />
     </application>
 
 </manifest>

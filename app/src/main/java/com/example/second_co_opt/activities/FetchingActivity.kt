@@ -1,14 +1,14 @@
-import android.content.Intent
+package com.example.second_co_opt.activities
+
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.second_co_opt.EmpAdapter
-import com.example.second_co_opt.EmployeeDetailsActivity
-import com.example.second_co_opt.EmployeeModel
 import com.example.second_co_opt.R
+import com.example.second_co_opt.adapters.EmpAdapter
+import com.example.second_co_opt.models.EmployeeModel
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -54,21 +54,6 @@ class FetchingActivity : AppCompatActivity() {
                     }
                     val mAdapter = EmpAdapter(empList)
                     empRecyclerView.adapter = mAdapter
-
-                    mAdapter.setOnItemClickListener(object : EmpAdapter.onItemClickListener{
-                        override fun onItemClick(position: Int) {
-
-                            val intent = Intent(this@FetchingActivity, EmployeeDetailsActivity::class.java)
-
-                            //put extras
-                            intent.putExtra("empId", empList[position].empId)
-                            intent.putExtra("empName", empList[position].empName)
-                            intent.putExtra("empAge", empList[position].empAge)
-                            intent.putExtra("empSalary", empList[position].empSalary)
-                            startActivity(intent)
-                        }
-
-                    })
 
                     empRecyclerView.visibility = View.VISIBLE
                     tvLoadingData.visibility = View.GONE

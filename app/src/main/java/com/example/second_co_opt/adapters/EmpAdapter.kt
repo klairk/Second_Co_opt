@@ -1,10 +1,12 @@
-package com.example.second_co_opt
+package com.example.second_co_opt.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.second_co_opt.R
+import com.example.second_co_opt.models.EmployeeModel
 
 class EmpAdapter(private val empList: ArrayList<EmployeeModel>) :
     RecyclerView.Adapter<EmpAdapter.ViewHolder>() {
