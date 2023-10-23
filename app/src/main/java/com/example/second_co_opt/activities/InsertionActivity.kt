@@ -37,7 +37,6 @@ class InsertionActivity : AppCompatActivity() {
 
     private fun saveEmployeeData() {
 
-        //getting values
         val empName = etEmpName.text.toString()
         val empAge = etEmpAge.text.toString()
         val empSalary = etEmpSalary.text.toString()
@@ -68,7 +67,5 @@ class InsertionActivity : AppCompatActivity() {
             }.addOnFailureListener { err ->
                 Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG).show()
             }
-
     }
-
 }

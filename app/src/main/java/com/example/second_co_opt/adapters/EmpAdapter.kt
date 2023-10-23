@@ -46,5 +46,4 @@ class EmpAdapter(private val empList: ArrayList<EmployeeModel>) :
         }
 
     }
-
 }
