@@ -8,4 +8,10 @@
     <string name="enter_name">Enter name</string>
     <string name="enter_salary">Enter salary</string>
     <string name="loading_data">Loading Data.....</string>
+    <string name="emp_id">Emp id</string>
+    <string name="emp_name">Emp Name</string>
+    <string name="emp_age">Emp Age</string>
+    <string name="emp_salary">Emp Salary</string>
+    <string name="delete">Delete</string>
+    <string name="update">Update</string>
 </resources>

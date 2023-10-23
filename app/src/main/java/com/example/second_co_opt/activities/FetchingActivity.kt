@@ -1,5 +1,6 @@
 package com.example.second_co_opt.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
@@ -34,7 +35,6 @@ class FetchingActivity : AppCompatActivity() {
         empList = arrayListOf<EmployeeModel>()
 
         getEmployeesData()
-
     }
 
     private fun getEmployeesData() {
@@ -55,6 +55,19 @@ class FetchingActivity : AppCompatActivity() {
                     val mAdapter = EmpAdapter(empList)
                     empRecyclerView.adapter = mAdapter
 
+                    mAdapter.setOnItemClickListener(object : EmpAdapter.onItemClickListener{
+                        override fun onItemClick(position: Int) {
+
+                            val intent = Intent(this@FetchingActivity, EmployeeDetailsActivity::class.java)
+
+                            //put extras
+                            intent.putExtra("empId", empList[position].empId)
+                            intent.putExtra("empName", empList[position].empName)
+                            intent.putExtra("empAge", empList[position].empAge)
+                            intent.putExtra("empSalary", empList[position].empSalary)
+                            startActivity(intent)
+                        }
+                    })
                     empRecyclerView.visibility = View.VISIBLE
                     tvLoadingData.visibility = View.GONE
                 }
@@ -63,7 +76,6 @@ class FetchingActivity : AppCompatActivity() {
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
-
         })
     }
 }
