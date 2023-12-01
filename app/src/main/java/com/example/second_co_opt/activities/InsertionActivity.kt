@@ -1,10 +1,12 @@
+package com.example.second_co_opt.activities
+
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.second_co_opt.EmployeeModel
 import com.example.second_co_opt.R
+import com.example.second_co_opt.models.EmployeeModel
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
@@ -35,7 +37,6 @@ class InsertionActivity : AppCompatActivity() {
 
     private fun saveEmployeeData() {
 
-        //getting values
         val empName = etEmpName.text.toString()
         val empAge = etEmpAge.text.toString()
         val empSalary = etEmpSalary.text.toString()
@@ -66,7 +67,5 @@ class InsertionActivity : AppCompatActivity() {
             }.addOnFailureListener { err ->
                 Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG).show()
             }
-
     }
-
 }

@@ -1,3 +1,5 @@
+package com.example.second_co_opt.activities
+
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -5,10 +7,9 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.second_co_opt.EmpAdapter
-import com.example.second_co_opt.EmployeeDetailsActivity
-import com.example.second_co_opt.EmployeeModel
 import com.example.second_co_opt.R
+import com.example.second_co_opt.adapters.EmpAdapter
+import com.example.second_co_opt.models.EmployeeModel
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -34,7 +35,6 @@ class FetchingActivity : AppCompatActivity() {
         empList = arrayListOf<EmployeeModel>()
 
         getEmployeesData()
-
     }
 
     private fun getEmployeesData() {
@@ -67,9 +67,7 @@ class FetchingActivity : AppCompatActivity() {
                             intent.putExtra("empSalary", empList[position].empSalary)
                             startActivity(intent)
                         }
-
                     })
-
                     empRecyclerView.visibility = View.VISIBLE
                     tvLoadingData.visibility = View.GONE
                 }
@@ -78,7 +76,6 @@ class FetchingActivity : AppCompatActivity() {
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
-
         })
     }
 }
